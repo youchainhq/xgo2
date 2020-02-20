@@ -5,4 +5,4 @@
 
 FROM registry.cn-hangzhou.aliyuncs.com/youchainhq/xgo:1.13.4
 
-MAINTAINER Péter Szilágyi <peterke@gmail.com>
+LABEL MAINTAINER Péter Szilágyi <peterke@gmail.com>
