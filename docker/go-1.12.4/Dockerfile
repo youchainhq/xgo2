@@ -3,7 +3,7 @@
 #
 # Released under the MIT license.
 
-FROM registry.cn-hangzhou.aliyuncs.com/youchainhq/xgo:base
+FROM youchain/xgo2:base
 
 LABEL MAINTAINER Péter Szilágyi <peterke@gmail.com>
 
