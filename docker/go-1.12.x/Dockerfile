@@ -3,6 +3,6 @@
 #
 # Released under the MIT license.
 
-FROM registry.cn-hangzhou.aliyuncs.com/youchainhq/xgo:1.12.13
+FROM youchain/xgo2:1.12.13
 
 LABEL MAINTAINER Péter Szilágyi <peterke@gmail.com>

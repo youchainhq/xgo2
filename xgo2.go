@@ -38,8 +38,8 @@ func init() {
 }
 
 // Cross compilation docker containers
-// var dockerBase = "registry.cn-hangzhou.aliyuncs.com/youchainhq/xgo:base"
-var dockerDist = "registry.cn-hangzhou.aliyuncs.com/youchainhq/xgo:"
+// var dockerBase = "youchain/xgo2:base"
+var dockerDist = "youchain/xgo2:"
 
 // Command line arguments to fine tune the compilation
 var (
