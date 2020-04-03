@@ -1,4 +1,4 @@
-# xgo - Go CGO cross compiler
+# xgo2 - Go CGO cross compiler
 
 fork from:
 
@@ -8,22 +8,17 @@ which fork from:
 
 https://github.com/karalabe/xgo
 
-using aliyun registry to hold the images
+using Docker Hub to hold the images
 
 # enhanced
 
 ## --goproxy
 
-enable goproxy environment variable
+enable `GOPROXY` environment variable when compiling
 
-ex:
-
-```go
---goproxy=https://mirrors.aliyun.com/goproxy/
-```
 
 # install
 
 ```go
-go get -u github.com/kevinho/xgo2
+go get -u github.com/youchainhq/xgo2
 ```
