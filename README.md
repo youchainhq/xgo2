@@ -16,6 +16,15 @@ using Docker Hub to hold the images
 
 enable `GOPROXY` environment variable when compiling
 
+## --envlist
+
+Send more environment variables when compiling.
+
+An example is to set the `GOPRIVATE` when a go mod project references some private modules (and in this case the `GOPROXY` should be a custom one).
+
+```shell
+xgo2 --envlist="GOPRIVATE=private.git.repo.com"
+```
 
 # install
 

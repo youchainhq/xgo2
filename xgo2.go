@@ -54,6 +54,7 @@ var (
 	targets     = flag.String("targets", "*/*", "Comma separated targets to build for")
 	goProxy     = flag.String("goproxy", "", "goproxy env")
 	dockerImage = flag.String("image", "", "Use custom docker image instead of official distribution")
+	envList     = flag.String("envlist", "", "More custom env vars separated with comma, as the format 'ENV1=VAL1,ENV2=VAL2'")
 )
 
 // ConfigFlags is a simple set of flags to define the environment and dependencies.
@@ -67,6 +68,7 @@ type ConfigFlags struct {
 	Arguments    string   // CGO dependency configure arguments
 	Targets      []string // Targets to build for
 	GoProxy      string   //go goProxy
+	EnvList      []string // more custom environment variables
 }
 
 // Command line arguments to pass to go build
@@ -174,6 +176,7 @@ func main() {
 		Arguments:    *crossArgs,
 		Targets:      strings.Split(*targets, ","),
 		GoProxy:      *goProxy,
+		EnvList:      strings.Split(*envList, ","),
 	}
 	flags := &BuildFlags{
 		Verbose: *buildVerbose,
@@ -313,6 +316,12 @@ func compile(image string, config *ConfigFlags, flags *BuildFlags, folder string
 
 	if config.GoProxy != "" {
 		args = append(args, []string{"-e", "GOPROXY=" + config.GoProxy}...)
+	}
+
+	for _, env := range config.EnvList {
+		if env != "" {
+			args = append(args, "-e", env)
+		}
 	}
 
 	if usesModules {
